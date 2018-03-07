@@ -37,6 +37,8 @@ class PostController extends AppController{
 	}
 
 	public function execute(){
+		$this->autoRender = false;
+
 		// 入力チェック
 		if($_FILES['article_image']['size'] === 0 || !isset($_POST['tags']) || !isset($_POST['lat']) || !isset($_POST['lng'])){
 			$this->redirect([
@@ -88,26 +90,54 @@ class PostController extends AppController{
 		$entity = $this->Articles->newEntity($article);
 		$this->Articles->save($entity);
 
-		$file = 'img/spot/'.$article['image'].$entity->id.'.jpg';
-
-		// ディレクトリの存在確認
-		if(!file_exists('img/spot/'.$article['image'])){
-			//ディレクトリ作成
-			mkdir('img/spot/'.$article['image'], 0777, true);
-		}
+		$file = 'img/articles/'.$entity->id.'.jpg';
 
 		// アップロード
 		if(!move_uploaded_file($_FILES['article_image']['tmp_name'], $file)){
 			$flg = false;
 		}
 
-		$this->redirect([
-			'controller' => 'Articles',
-			'action' => 'index',
-			'?' => [
-				'id' => $entity->id
-			],
-		]);
+		// var_dump($_FILES['article_image']['tmp_name']);
+		// var_dump($file);
+
+		//exifデータを取得
+		$exif = exif_read_data($file);
+
+		if(isset($exif['GPSLatitude']) && isset($exif['GPSLongitude'])){
+
+			$article = array();
+
+			$ref = array($exif['GPSLatitudeRef'],$exif['GPSLongitudeRef']);
+			$data = array($exif['GPSLatitude'],$exif['GPSLongitude']);
+
+			$lat = eval("return ".$data[0][0].";");
+			$lat += eval("return ".$data[0][1]."/60;");
+			$lat += eval("return ".$data[0][2]."/3600;");
+
+			$lng = eval("return ".$data[1][0].";");
+			$lng += eval("return ".$data[1][1]."/60;");
+			$lng += eval("return ".$data[1][2]."/3600;");
+
+			$article = array(
+				'id' => $entity->id,
+				'lat' => $lat,
+				'lng' => $lng
+			);
+
+			$this->Articles->save($entity);
+
+		}else {
+			echo '位置情報を取得できませんでした。';
+		}
+
+
+		// $this->redirect([
+		// 	'controller' => 'Articles',
+		// 	'action' => 'index',
+		// 	'?' => [
+		// 		'id' => $entity->id
+		// 	],
+		// ]);
 		return;
 	}
 

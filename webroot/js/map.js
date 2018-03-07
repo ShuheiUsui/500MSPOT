@@ -99,7 +99,7 @@ function initMap(lat, lng) {
 	var marker = new google.maps.Marker({
 		position: map.getCenter(),
 		map: map,
-		icon: '/Spot/img/center_icon.png'
+		icon: '/GitHub/500MSPOT/img/center_icon.png'
 	});
 }
 
@@ -136,7 +136,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 function nearSpot(latitude,longitude) {
 	var sp = [];
 	$.ajax({
-		url:'/Spot/Map/Near',
+		url:'/GitHub/500MSPOT/Map/Near',
 		type:'POST',
 		async: false,
 		data:{
@@ -219,7 +219,7 @@ $('.button').on('click', 'a[data-action="search"]', function(event){
 				this.initMap(data.latitude, data.longitude);
 
 				$.ajax({
-					url:'/Spot/Map/Search',
+					url:'/GitHub/500MSPOT/Map/Search',
 					type:'POST',
 					data:{
 						lat: latitude,

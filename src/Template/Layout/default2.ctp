@@ -15,7 +15,7 @@
 		<?= $this->Html->css('font-awesome.min.css') ?>
 	</head>
 	<body>
-		<script src="/spot/js/jquery-3.2.1.min.js"></script>
+		<script src="/GitHub/500MSPOT/js/jquery-3.2.1.min.js"></script>
 		<header>
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
@@ -26,7 +26,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/Spot/">500M<br>SPOT</a>
+						<a class="navbar-brand" href="/GitHub/500MSPOT/">500M<br>SPOT</a>
 						<?php //echo $this->Html->image('logo.png', array('alt' => 'SPOTのロゴ')); ?>
 					</div>
 
@@ -40,8 +40,8 @@
 							<li class="icon"><i class="fa fa-bell" aria-hidden="true"></i></li>
 							<li class="icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></li>
 <?php }else{ ?>
-							<li><a href="http://localhost/Spot/SignUp">アカウント作成</a></li>
-							<li><a href="http://localhost/Spot/Login">ログイン</a></li>
+							<li><a href="http://localhost/GitHub/500MSPOT/SignUp">アカウント作成</a></li>
+							<li><a href="http://localhost/GitHub/500MSPOT/Login">ログイン</a></li>
 <?php } ?>
 <?php } ?>
 						</ul>

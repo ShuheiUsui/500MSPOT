@@ -66,5 +66,5 @@
 		</div>
 	</div>
 </main>
-<script src="/Spot/js/map.js"></script>
+<script src="/GitHub/500MSPOT/js/map.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfvFL7Rzv0VXf_H1pe39nx3mH0kndb29k"></script>

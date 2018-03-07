@@ -10,7 +10,7 @@
 				<li>ユーザ4</li>
 				<li>ユーザ5</li>
 			</ul>
-			<p><a href="/Spot/Manage/users">一覧</a></p>
+			<p><a href="/GitHub/500MSPOT/Manage/users">一覧</a></p>
 
 			<h1>問い合わせ管理</h1>
 			<ul>
@@ -20,7 +20,7 @@
 				<li>inquiry4</li>
 				<li>inquiry5</li>
 			</ul>
-			<p><a href="/Spot/Manage/Inquiries">一覧</a></p>
+			<p><a href="/GitHub/500MSPOT/Manage/Inquiries">一覧</a></p>
 
 			<h1>通報管理</h1>
 			<ul>
@@ -30,7 +30,7 @@
 				<li>report4</li>
 				<li>report5</li>
 			</ul>
-			<p><a href="/Spot/Manage/reports">一覧</a></p>
+			<p><a href="/GitHub/500MSPOT/Manage/reports">一覧</a></p>
 		</aside>
 	</div>
 </main>

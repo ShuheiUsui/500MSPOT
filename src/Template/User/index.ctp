@@ -49,4 +49,4 @@
 	<p id="err"></p>
 	</div>
 </main>
-<script src="/Spot/js/user.js"></script>
+<script src="/GitHub/500MSPOT/js/user.js"></script>

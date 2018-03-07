@@ -3,7 +3,7 @@
 		<div class="col-md-12">
 			<h2>投稿の編集</h2>
 
-			<form action="/Spot/Post/EditExecute" name="post_form" method="post" enctype="multipart/form-data">
+			<form action="/GitHub/500MSPOT/Post/EditExecute" name="post_form" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="id" value="<?php echo $art->id; ?>">
 				<dl>
 					<dt>写真*</dt>

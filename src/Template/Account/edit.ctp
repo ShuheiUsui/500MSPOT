@@ -10,9 +10,9 @@
 			</aside>
 
 			<article class="col-md-9">
-				<form action="/Spot/Account/Execute" method="post">
+				<form action="/GitHub/500MSPOT/Account/Execute" method="post">
 					<dl>
-						<dt><img src="/Spot/img/user/<?php echo $user->id; ?>.jpg" alt="ユーザーのイメージ"></dt>
+						<dt><img src="/GitHub/500MSPOT/img/user/<?php echo $user->id; ?>.jpg" alt="ユーザーのイメージ"></dt>
 						<dd>
 							<a href="#" class="btn">画像を変更</a>
 						</dd>

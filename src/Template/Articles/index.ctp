@@ -37,7 +37,7 @@
 
 					<div class="hash">
 						<ul class="list-inline">
-							<?php foreach (explode(',',$arts->tags) as $tag) { echo '<li><a href="/Spot/?tags='.$tag.'">#'.$tag,'</a><li>'; } ?>
+							<?php foreach (explode(',',$arts->tags) as $tag) { echo '<li><a href="/GitHub/500MSPOT/?tags='.$tag.'">#'.$tag,'</a><li>'; } ?>
 						</ul>
 					</div>
 
@@ -60,7 +60,7 @@
 						<!-- <pre><?php //foreach ($comments as $row) {print_r($row); } ?></pre> -->
 	<?php } ?>
 						</ul>
-						<!-- action="/Spot/Articles/Comment" -->
+						<!-- action="/GitHub/500MSPOT/Articles/Comment" -->
 						<form name="comment_form" method="post">
 							<input type="hidden" name="article_id" value="<?php echo $arts->id; ?>">
 							<p><input type="text" class="form-control" name="comment" placeholder="Comment..." maxlength="100"></p>
@@ -83,7 +83,7 @@
 	<?php if(isset($_SESSION['userInfo'])){ // ログイン中に表示 ?>
 					<li><a href="#" class="btn btn-block">通報</a></li>
 		<?php if($_SESSION['userInfo']['id'] == $arts->user_id){ //自分の投稿の時表示 ?>
-					<li><a href="/Spot/Post/Edit/?id=<?php echo $arts->id; ?>" class="btn btn-block">編集</a></li>
+					<li><a href="/GitHub/500MSPOT/Post/Edit/?id=<?php echo $arts->id; ?>" class="btn btn-block">編集</a></li>
 					<li><a href="#" class="btn btn-block">削除</a></li>
 		<?php } ?>
 	<?php } ?>

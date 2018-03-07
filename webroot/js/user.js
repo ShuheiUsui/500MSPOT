@@ -3,7 +3,7 @@ $(document).on('click', 'a[data-action="follow"]', function(event){
 	var form = document.forms.follow;
 
 	$.ajax({
-		url:'/Spot/User/Follow',
+		url:'/GitHub/500MSPOT/User/Follow',
 		type:'POST',
 		data:{
 			follower: form.user_id.value
@@ -26,7 +26,7 @@ $(document).on('click', 'a[data-action="quit_follow"]', function(event){
 	var form = document.forms.follow;
 
 	$.ajax({
-		url:'/Spot/User/QuitFollow',
+		url:'/GitHub/500MSPOT/User/QuitFollow',
 		type:'POST',
 		data:{
 			follower: form.user_id.value

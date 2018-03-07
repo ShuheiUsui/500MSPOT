@@ -2,7 +2,7 @@ $(document).on('click', 'a[data-action="good"]', function(event){
 	var form = document.forms.comment_form;
 
 	$.ajax({
-		url:'/Spot/Articles/Good/',
+		url:'/GitHub/500MSPOT/Articles/Good/',
 		type:'POST',
 		data:{
 			article_id: form.article_id.value
@@ -24,7 +24,7 @@ $(document).on('click', 'button[data-action="comment_submit"]', function(event){
 	var form = document.forms.comment_form;
 
 	$.ajax({
-		url:'/Spot/Articles/Comment/',
+		url:'/GitHub/500MSPOT/Articles/Comment/',
 		type:'POST',
 		data:{
 			article_id: form.article_id.value,
