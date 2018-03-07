@@ -1,0 +1,480 @@
+/**** 全体CSS ****/
+html {
+	font-size: 16px;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	letter-spacing: 0.1em;
+	line-height: 1.3em;
+	font-family: 'Questrial', "Rounded Mplus 1c";
+	background-image: url(../img/mainvisual.jpg);
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+h1,h2,h3,h4,h5,dt,dd {
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.3em;
+}
+
+img {
+	width: 100%;
+}
+
+a {
+	outline: none;
+}
+
+
+/* 動的なWebページでもfooterを一番下にする設定 */
+header {
+	flex: 0 0 auto;
+}
+
+main {
+	flex: 1 0 auto;
+	background-color: rgba(255,255,255,.9);
+}
+
+footer {
+	flex: 0 0 auto;
+	padding: 50px 0;
+	color: #fff;
+	background-color: #7f8c8d;
+}
+
+/* headerのスタイル */
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.top_main_visual {
+	height: 300px;
+}
+
+.sub_main_visual {
+	height: 200px;
+}
+
+header h1 {
+	margin: 20px;
+	padding: 10px;
+}
+
+header #header_nav {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+header #header_nav a {
+	display: inline-block;
+	padding: 3px 10px;
+	border: 1px solid #34495e;
+	border-radius: 3px;
+	color: #34495e;
+	text-decoration: none;
+}
+
+header #header_nav a:hover {
+	/* color: #ddd;
+	border-color: #ddd; */
+}
+
+header #header_nav a i {
+	font-size: 1.5em;
+}
+
+.top_main_visual img {
+	width: 200px;
+}
+
+.sub_main_visual img {
+	width: 150px;
+}
+
+/* navのスタイル */
+nav {
+	display: block;
+	background-color: rgba(255,255,255,.9);
+}
+
+nav::after {
+	content:'';
+}
+
+nav ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+nav li {
+	padding: 5px 20px;
+}
+
+nav li a {
+	display: inline-block;
+	padding: 10px 0;
+}
+
+nav li a:hover {
+	text-decoration: none;
+}
+
+
+nav .header_searchform input {
+	padding: 0 5px;
+	width:80%;
+	border: 0;
+	color: #95a5a6;
+	border-bottom: 1px solid #95a5a6;
+	background: none;
+}
+
+nav .header_searchform button {
+	width: 10%;
+	color: #95a5a6;
+	background: none;
+}
+
+/* Toggle(Button) */
+.navToggle {
+	display: none;
+	position: relative;
+	padding: 20px;
+	background-color: rgba(255,255,255,.9);
+}
+
+#navToggle {
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 8px;
+	width: 30px;
+	height: 25px;
+	cursor: pointer;
+}
+
+#navToggle span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	border-bottom: solid 3px #34495e;
+	-webkit-transition: .35s ease-in-out;
+	-moz-transition: .35s ease-in-out;
+	transition: .35s ease-in-out;
+}
+#navToggle span:nth-child(1) {
+	top: 0
+}
+#navToggle span:nth-child(2) {
+	top: 11px
+}
+#navToggle span:nth-child(3) {
+	top: 22px
+}
+
+/* Click Toggle(Button) */
+#navToggle .openNav span:nth-child(1) {
+	top: 11px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#navToggle .openNav span:nth-child(2), #navToggle .openNav span:nth-child(3) {
+	top: 11px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+/* Click Toggle(Button) */
+#navToggle .openNav span:nth-child(1) {
+	top: 11px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#navToggle .openNav span:nth-child(2), #navToggle .openNav span:nth-child(3) {
+	top: 11px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+@media (max-width:767px) {
+	#navToggle {
+		display: block;
+	}
+
+	nav {
+		display: none;
+	}
+
+	nav ul {
+		display: block;
+	}
+
+	.navToggle {
+		display: block;
+	}
+}
+
+/* 全体スタイル */
+article {
+	padding: 20px 0;
+}
+
+aside {
+	padding: 20px 0;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+textarea {
+	height: 3em;
+	width: 100%;
+	resize: vertical;
+}
+
+
+@media (max-width: 767px) {
+	.container {
+		width: 100%;
+	}
+}
+
+
+
+/* トップ */
+#top figure {
+	margin-bottom: 30px;
+}
+
+#top figure:hover {
+	/* opacity: 0.5; */
+}
+
+#top figure img {
+	width: 100%;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+#top .index {
+	margin: 20px;
+}
+
+#top .index * {
+	margin: 0;
+	padding: 0;
+}
+
+/* 記事ページのスタイル */
+#article h3 span {
+	font-size: 0.8rem;
+}
+
+#article .article_user {
+	display: flex;
+	justify-content: space-between;
+}
+
+#article section {
+	margin-bottom: 20px;
+}
+
+#article .row figure {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+#article .row figure {
+	margin-bottom: 20px;
+}
+
+#article .row figure img {
+	width: 100%;
+}
+
+#article .user img {
+	height: 40px;
+	width: 40px;
+	border-radius: 100%;
+}
+
+#article .action a {
+	padding-right: 10px;
+}
+
+#article i {
+	font-size: 1.5rem;
+}
+
+#article #map {
+	height: 200px;
+}
+
+#article .commentform {
+	display: inline-block;
+	margin: 10px 0;
+	width: 100%;
+	font-size: 16px;
+	border: 0;
+	border-bottom: 1px solid #ddd;
+}
+
+#article .comments ul li {
+	margin-bottom: 10px;
+}
+
+#mypage figure {
+	margin-bottom: 30px;
+}
+
+#mypage .user_info .header img {
+	border-radius: 100%;
+}
+
+#mypage .arts {
+	padding: 20px 0;
+}
+
+#post dl {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 25px;
+	border-bottom: 1px solid #ddd;
+
+}
+
+#post dt {
+	width: 30%;
+	text-align: center;
+}
+
+#post dd {
+	width: 70%;
+}
+
+#post .map {
+	height: 200px;
+}
+
+#post .submit {
+	margin: 20px 0;
+}
+
+#post .submit button {
+}
+
+#post #canvas_wrap {
+	text-align: center;
+}
+
+#post_edit dl {
+	display: flex;
+}
+
+#post_edit dt {
+	width: 30%;
+}
+
+#post_edit dd {
+	width: 70%;
+}
+
+#post_edit dd img {
+	width: 200px;
+}
+
+#post_edit .map {
+	height: 200px;
+}
+
+#post_edit #map {
+	height: 100%;
+}
+
+#near {
+	margin: 20px auto;
+}
+
+#near .row {
+	height: 100%;
+}
+
+#near .row .map{
+	height: 600px;
+}
+
+#near #map {
+	height: 600px;
+}
+
+#near .arts .art {
+	display: flex;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #fff;
+}
+
+#near .arts img {
+	width: 100px;
+}
+
+#near .map {
+	height: 600px;
+}
+
+#near .arts_wrapper {
+	height: 600px;
+	overflow: scroll;
+}
+
+/* admin */
+#toAdmin {
+	color: inherit;
+}
+
+#toAdmin:hover {
+	text-decoration: none;
+}
+
+#admin dl {
+	display: flex;
+}
+
+#admin dt {
+	width: 30%;
+	text-align: center;
+}
+
+#admin dd {
+	width: 70%;
+}

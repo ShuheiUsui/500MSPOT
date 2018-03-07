@@ -1,0 +1,44 @@
+#modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	visibility: hidden;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+#modal::before {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 5px;
+	color: #f5f5f5;
+	border: 1px solid #f5f5f5;
+	border-radius: 3px;
+	content: '閉じる';
+}
+
+#modal * {
+	margin: 0;
+}
+
+#modal .modal_field {
+	background-color: #fff;
+}
+
+#modal .big {
+	width: 800px;
+}
+
+#modal .mid {
+	width: 600px;
+}
+
+#modal .sml {
+	width: 400px;
+}
