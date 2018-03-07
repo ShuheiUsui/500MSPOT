@@ -55,9 +55,11 @@ class HomeController extends AppController{
 			$arts = $articleTable->find()->select(['id','good'])->where(['category_id =' => $category])->where(['report =' => 0])->order(['datetime' => 'DESC'])->limit(16);
 		}else{
 			// 絞り込み条件なし
+			$popular = $articleTable->find()->select(['id','good'])->where(['report =' => 0])->order(['good' => 'DESC'])->limit(8);
 			$arts = $articleTable->find()->select(['id','good'])->where(['report =' => 0])->order(['datetime' => 'DESC'])->limit(16);
 		}
 
+		$this->set('popular', $popular);
 		$this->set('arts', $arts);
 	}
 

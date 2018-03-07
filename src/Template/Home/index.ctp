@@ -32,7 +32,22 @@ switch ($_GET['category']) {
 	</div>
 <?php } ?>
 
+<?php if($popular->count() > 0){ ?>
+	<h2>人気な投稿</h2>
+	<?php foreach ($popular as $row) { ?>
+		<figure class="col-md-3 col-xs-6">
+			<a href="Articles?id=<?php echo $row->id ?>" class="spot">
+				<?php echo $this->Html->image('articles/'.$row->id.'.jpg', ['alt' => 'スポットイメージ']);?>
+				<p class="hover_info">
+					<?php echo $row->good; ?> <i class="fa fa-thumbs-o-up"></i>
+				</p>
+			</a>
+		</figure>
+	<?php } ?>
+<?php } ?>
+
 <?php if($arts->count() > 0){ ?>
+	<h2>新着記事</h2>
 	<?php foreach ($arts as $row) { ?>
 		<figure class="col-md-3 col-xs-6">
 			<a href="Articles?id=<?php echo $row->id ?>" class="spot">
@@ -48,3 +63,14 @@ switch ($_GET['category']) {
 	</article>
 	</div>
 </main>
+
+
+<script type="text/javascript">
+	// $(document).on('mouseover','figure > a',function(){
+	// 	$(this).children('.hover_info').fadeIn();
+	// });
+
+	// $(document).on('mouseout','figure',function(){
+	// 	$(this).children('.hover_info').fadeOut();
+	// });
+</script>
