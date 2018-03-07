@@ -2,7 +2,7 @@
 	<div id="signup" class="container">
 		<article>
 			<h2>新規会員登録</h2>
-			<form action="./SignUp/execute" method="post">
+			<form action="./SignUp/execute" method="post" name="signUp" onsubmit="return check()">
 				<dl class="row">
 					<dt class="col-xs-12">ニックネーム</dt>
 					<dd class="col-xs-12"><input class="form-control" type="text" name="name" placeholder="keisuke_tero??" required></dd>
@@ -25,7 +25,7 @@
 
 				<dl class="row">
 					<dt class="col-xs-12">パスワード(確認用)</dt>
-					<dd class="col-xs-12"><input class="form-control" type="password" name="password_conf" required></dd>
+					<dd class="col-xs-12"><input class="form-control" type="password" name="password_conf" maxlength="11" required></dd>
 				</dl>
 				<div class="row">
 					<p class="col-xs-6"><a class="btn btn-block btn-default" href="../">キャンセル</a></p>
@@ -42,3 +42,30 @@
 		</article>
 	</div>
 </main>
+
+<script type="text/javascript">
+
+function check(){
+	var form = document.forms.signUp;
+	var flg = true;
+
+	if(form.tel.value.length != 11){
+		console.log('NG:tel');
+		flg = false;
+	}
+
+	// passwordの一致確認
+	if(form.password.value != form.password_conf.value){
+		console.log('NG:password');
+		flg = false;
+	}
+
+	// flg確認
+	if(flg){
+		return true;
+	}else{
+		console.log('NG!');
+		return false;
+	}
+}
+</script>

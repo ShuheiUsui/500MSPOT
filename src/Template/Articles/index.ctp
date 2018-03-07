@@ -1,6 +1,7 @@
 <main>
 	<div id="article" class="container">
 		<article>
+<?php if($arts != null){ ?>
 			<div class="article_user">
 				<div class="user">
 					<ul class="list-inline">
@@ -73,7 +74,9 @@
 					</div>
 				</div>
 			</div>
-
+<?php }else{ ?>
+	<h1 class="text-center">お探しの記事が見つかりませんでした。</h1>
+<?php } ?>
 		</article>
 
 		<div id="modal">
