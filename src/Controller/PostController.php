@@ -3,6 +3,7 @@ namespace App\Controller;
 use Cake\ORM\TableRegistry;
 use Cake\ORM\Entity;
 use App\Utils\Auth;
+use App\Utils\ImageFormat;
 
 class PostController extends AppController{
 
@@ -97,6 +98,8 @@ class PostController extends AppController{
 			$flg = false;
 		}
 
+		ImageFormat::format($file);
+
 		// var_dump($file);
 
 		//exifデータを取得
@@ -128,7 +131,7 @@ class PostController extends AppController{
 			);
 
 			// var_dump($article);
-			
+
 			$entity = $this->Articles->newEntity($article);
 			$this->Articles->save($entity);
 		}
