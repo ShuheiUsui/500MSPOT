@@ -97,11 +97,14 @@ class PostController extends AppController{
 			$flg = false;
 		}
 
-		// var_dump($_FILES['article_image']['tmp_name']);
 		// var_dump($file);
 
 		//exifデータを取得
-		$exif = exif_read_data($file);
+		$exif = @exif_read_data($file);
+
+		// echo '<pre>';
+		// var_dump($exif);
+		// echo '</pre>';
 
 		if(isset($exif['GPSLatitude']) && isset($exif['GPSLongitude'])){
 
@@ -124,20 +127,20 @@ class PostController extends AppController{
 				'lng' => $lng
 			);
 
+			// var_dump($article);
+			
+			$entity = $this->Articles->newEntity($article);
 			$this->Articles->save($entity);
-
-		}else {
-			echo '位置情報を取得できませんでした。';
 		}
 
+		$this->redirect([
+			'controller' => 'Articles',
+			'action' => 'index',
+			'?' => [
+				'id' => $entity->id
+			],
+		]);
 
-		// $this->redirect([
-		// 	'controller' => 'Articles',
-		// 	'action' => 'index',
-		// 	'?' => [
-		// 		'id' => $entity->id
-		// 	],
-		// ]);
 		return;
 	}
 

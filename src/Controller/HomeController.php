@@ -38,6 +38,7 @@ class HomeController extends AppController{
 
 			$tag = '%'.$tag.'%';
 
+			$popular = $articleTable->find()->select(['id','good'])->where(['tags LIKE' => $tag])->where(['category_id =' => $category])->where(['report =' => 0])->order(['good' => 'DESC'])->limit(8);
 			$arts = $articleTable->find()->select(['id','good'])->where(['tags LIKE' => $tag])->where(['category_id =' => $category])->where(['report =' => 0])->order(['datetime' => 'DESC'])->limit(16);
 
 		}else if(isset($_GET['tags'])){
@@ -46,12 +47,14 @@ class HomeController extends AppController{
 
 			$tag = '%'.$tag.'%';
 
+			$popular = $articleTable->find()->select(['id','good'])->where(['tags LIKE' => $tag])->where(['report =' => 0])->order(['good' => 'DESC'])->limit(8);
 			$arts = $articleTable->find()->select(['id','good'])->where(['tags LIKE' => $tag])->where(['report =' => 0])->order(['datetime' => 'DESC'])->limit(16);
 
 		}else if(isset($_GET['category'])){
 			// Categoryで絞り込み
 			$category = $_GET['category'];
 
+			$popular = $articleTable->find()->select(['id','good'])->where(['category_id =' => $category])->where(['report =' => 0])->order(['good' => 'DESC'])->limit(8);
 			$arts = $articleTable->find()->select(['id','good'])->where(['category_id =' => $category])->where(['report =' => 0])->order(['datetime' => 'DESC'])->limit(16);
 		}else{
 			// 絞り込み条件なし
