@@ -33,7 +33,7 @@
 					</div>
 
 					<div class="content">
-						<p><?php echo $arts->content; ?></p>
+						<p><?php echo h($arts->content); ?></p>
 					</div>
 
 					<div class="hash">
@@ -55,7 +55,7 @@
 						<ul>
 	<?php if($cmtNum > 0){?>
 	<? foreach ($comments as $row) { ?>
-							<li><a href="./User/?user_id=<?php echo $row->users['id'];?>"><?php echo $this->Html->image('user/'.$row->users['image'], ['alt' => $row->users['name']])?></a><?php echo $row->comment ?></li>
+							<li><a href="./User/?user_id=<?php echo $row->users['id'];?>"><?php echo $this->Html->image('user/'.$row->users['id'].'.jpg', ['alt' => $row->users['name']])?></a><?php echo $row->comment ?></li>
 	<?php } ?>
 						<!-- debug -->
 						<!-- <pre><?php //foreach ($comments as $row) {print_r($row); } ?></pre> -->
