@@ -103,7 +103,7 @@ class PostController extends AppController{
 		// var_dump($file);
 
 		//exifデータを取得
-		$exif = @exif_read_data($file);
+		$exif = exif_read_data($file);
 
 		// echo '<pre>';
 		// var_dump($exif);

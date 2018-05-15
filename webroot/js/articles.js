@@ -38,8 +38,8 @@ $(document).on('click', 'button[data-action="comment_submit"]', function(event){
 		location.reload();
 	})
 	.fail(function () {
-		console.log('ajax失敗');
-		$('#err').html(errorHandler(arguments));
+		// console.log('ajax失敗');
+		// $('#err').html(errorHandler(arguments));
 	});
 });
 
